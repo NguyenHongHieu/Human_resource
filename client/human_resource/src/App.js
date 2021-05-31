@@ -7,12 +7,10 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <div className="main">
-          <Switch>
-            <Route exact path="/" component={Login} />
-            <Route exact path="/home" component={Home} />
-          </Switch>
-        </div>
+        <Switch>
+          <Route exact path="/" component={Login} />
+          <Route exact path="/home" component={Home} />
+        </Switch>
       </Router>
     </div>
   );
