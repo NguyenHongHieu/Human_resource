@@ -1,14 +1,28 @@
-import { Button, Space } from 'antd'
+import { Space } from 'antd'
 import React from 'react'
+import initData from './data'
 
 function SeatDisplayList() {
+  console.log(initData);
   return (
-    <div>
-      <Space size={[8, 16]} wrap>
-        {new Array(20).fill(null).map((_, index) => (
-          // eslint-disable-next-line react/no-array-index-key
-          <Button key={index}>Button</Button>
-        ))}
+    <div style={{ width: '460px', margin: 10, padding: 5, border: '1px solid black' }}>
+      <Space size='large' wrap>
+        {
+          initData.map((item, index) => {
+            return <div
+              style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                width: 70,
+                height: 70,
+                backgroundColor: 'gray',
+              }}
+            >
+              <h2 style={{ color: 'white' }}>{item.numberSeat}</h2>
+            </div>
+          })
+        }
       </Space>
     </div>
   )
